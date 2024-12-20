@@ -19,11 +19,11 @@
     } else if (typeof input === 'number') {
       return input * input;
     } else {
-      return "Unsupported type"
+      return 'Unsupported type'
     }
   };
   const test = [
-    processInput("hello"),
+    processInput('hello'),
     processInput(5),
     processInput(true)
   ];
@@ -39,11 +39,11 @@
     } else if (typeof input === 'number') {
       return input * input;
     } else {
-      return "Unsupported type"
+      return 'Unsupported type'
     }
   };
   const testUnknown = [
-    processInputUnknown("hello"),
+    processInputUnknown('hello'),
     processInputUnknown(5),
     processInputUnknown(true)
   ];
@@ -53,6 +53,7 @@
   };
 
 
+console.log('\r');
 // ### **Exercise 2: Implementing a Function with `never`**
 // 1. Write a function `handleError` that:
 //    - Accepts a `message` of type `string`.
@@ -70,12 +71,13 @@
     throw new Error(message);
   };
   try {
-    handleError("Critical failure!");
+    handleError('Critical failure!');
   } catch (err) {
     console.log(err.message);
   }
 
 
+console.log('\r');
 // ### **Exercise 3: Handling `undefined` and `null` with Strict Null Checks**
 // 1. Create a function `getValueLength` that:
 //    - Accepts a parameter `value` of type `string | null | undefined`.
@@ -108,6 +110,7 @@
   };
 
 
+console.log('\r');
 // ### **Exercise 4: Enforcing Array Type and Operations**
 // 1. Create a function `addToNumbersArray` that:
 //    - Accepts two parameters:
@@ -137,6 +140,7 @@
   };
 
 
+console.log('\r');
 // ### **Exercise 5: Working with Readonly Arrays**
 // 1. Create a function `duplicateArray` that:
 //    - Accepts a parameter `arr` of type `readonly string[]`.
@@ -152,10 +156,11 @@
   function duplicateArray(arr: readonly string[]): string[] {
     return arr.map(str => `${str}${str}`);
   }
-  const duplicateArrayResult = duplicateArray(["foo", "bar"]);
+  const duplicateArrayResult = duplicateArray(['foo', 'bar']);
   console.log(duplicateArrayResult);
 
 
+console.log('\r');
 // ### **Exercise 6: Type Inference and Mixed Arrays**
 // 1. Create a function `filterMixedArray` that:
 //    - Accepts an array `arr` of inferred type `(string | number)[]`.
@@ -183,11 +188,12 @@
     });
     return [stringArr, stringNum]
   };
-  const filterMixedArrayResult = filterMixedArray([1, "apple", 2, "banana", 3]);
+  const filterMixedArrayResult = filterMixedArray([1, 'apple', 2, 'banana', 3]);
   const [arr1, arr2] = filterMixedArrayResult;
   console.log(arr1, arr2);
 
 
+console.log('\r');
 // ### **Exercise 7: Creating and Manipulating Tuples**
 // 1. Create a function `updateTuple` that:
 //    - Accepts a tuple `data` of type `[number, string, boolean]`.
@@ -214,14 +220,15 @@
     });
   };
   const updateTupleResult = [
-    updateTuple([42, "hello", true]),
-    updateTuple([99, "typescript", false])
+    updateTuple([42, 'hello', true]),
+    updateTuple([99, 'typescript', false])
   ];
   for (let result of updateTupleResult) {
     console.log(result);
   };
 
 
+console.log('\r');
 // ### **Exercise 8: Readonly Named Tuples**
 // 1. Define a readonly named tuple type `Point3D` for a 3D coordinate with:
 //    - `x` as a number.
@@ -258,6 +265,7 @@
   });
 
 
+console.log('\r');
 // ### **Exercise 9: Tuple Validation**
 // 1. Create a function `validateTuple` that:
 //    - Accepts an input `data` of type `any[]`.
@@ -278,15 +286,16 @@
     }
   };
   const validateTupleResult = [
-    validateTuple(["hello", 42, true]),
-    validateTuple([42, "hello", true]),
-    validateTuple(["hello", 42])
+    validateTuple(['hello', 42, true]),
+    validateTuple([42, 'hello', true]),
+    validateTuple(['hello', 42])
   ];
   for (let result of validateTupleResult) {
     console.log(result);
   };
 
 
+console.log('\r');
 // ### **Exercise 10: Validating Object Structures**
 // 1. Define an object type `Product` with:
 //    - `name` as a `string`.
@@ -318,9 +327,9 @@
     }
   };
   const validateProductResult = [
-    validateProduct({ name: "Laptop", price: 1299 }),
-    validateProduct({ name: "Phone", price: "Free" }),
-    validateProduct({ price: 200, category: "Electronics" })
+    validateProduct({ name: 'Laptop', price: 1299 }),
+    validateProduct({ name: 'Phone', price: 'Free' }),
+    validateProduct({ price: 200, category: 'Electronics' })
   ];
   validateProductResult.forEach(result => {
     try {
@@ -331,6 +340,7 @@
   });
 
 
+console.log('\r');
 // ### **Exercise 11: Using Index Signatures**
 // 1. Create an object type `ScoreBoard` that:
 //    - Has a string index signature with `number` values.
@@ -352,7 +362,7 @@
   // solution
   type ScoreBoard = { [index: string]: number };
   const scores: ScoreBoard = { 'Alice': 10, 'Bob': 20 };
-  const updates = [{ player: "Alice", score: 5 }, { player: "Charlie", score: 15 }];
+  const updates = [{ player: 'Alice', score: 5 }, { player: 'Charlie', score: 15 }];
 
   function updateScores(scores: ScoreBoard, updates: {player: string, score: number}[]): ScoreBoard {
     for (let obj of updates) {
@@ -368,6 +378,7 @@
   console.log(updateScoresResult);
 
 
+console.log('\r');
 // ### **Exercise 12: Deeply Nested Object Types**
 // 1. Define a type `Department` with:
 //    - `name` as a `string`.
@@ -406,10 +417,10 @@
     return obj.employees.map(employee => employee.name);
   };
   const department: Department = {
-    name: "Engineering",
+    name: 'Engineering',
     employees: [
-      { id: 1, name: "Alice" },
-      { id: 2, name: "Bob" },
+      { id: 1, name: 'Alice' },
+      { id: 2, name: 'Bob' },
     ],
   };
 

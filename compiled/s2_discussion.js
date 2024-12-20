@@ -10,10 +10,10 @@ val = 'true';
 // 'unknown' is a similar, but safer alternative to 'any'
 // TypeScript will prevent 'unknown' types from being used.
 let w = 1;
-w = "string"; // no error
+w = 'string'; // no error
 w = {
     runANonExistentMethod: () => {
-        console.log("I think therefore I am");
+        console.log('I think therefore I am');
     }
 };
 // How can we avoid the error for the code commented out below when we don't know the type?
@@ -90,4 +90,4 @@ const employee = {
 // index signatures can be used for objects without a defined list of properties
 const nameAgeMap = {};
 nameAgeMap.Jack = 25;
-nameAgeMap.Mark = "Fifty";
+nameAgeMap.Mark = 'Fifty';

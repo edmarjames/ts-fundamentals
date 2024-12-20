@@ -19,12 +19,12 @@ function processInput(input) {
         return input * input;
     }
     else {
-        return "Unsupported type";
+        return 'Unsupported type';
     }
 }
 ;
 const test = [
-    processInput("hello"),
+    processInput('hello'),
     processInput(5),
     processInput(true)
 ];
@@ -42,12 +42,12 @@ function processInputUnknown(input) {
         return input * input;
     }
     else {
-        return "Unsupported type";
+        return 'Unsupported type';
     }
 }
 ;
 const testUnknown = [
-    processInputUnknown("hello"),
+    processInputUnknown('hello'),
     processInputUnknown(5),
     processInputUnknown(true)
 ];
@@ -56,6 +56,7 @@ for (let result of testUnknown) {
     console.log(result);
 }
 ;
+console.log('\r');
 // ### **Exercise 2: Implementing a Function with `never`**
 // 1. Write a function `handleError` that:
 //    - Accepts a `message` of type `string`.
@@ -71,11 +72,12 @@ function handleError(message) {
 }
 ;
 try {
-    handleError("Critical failure!");
+    handleError('Critical failure!');
 }
 catch (err) {
     console.log(err.message);
 }
+console.log('\r');
 // ### **Exercise 3: Handling `undefined` and `null` with Strict Null Checks**
 // 1. Create a function `getValueLength` that:
 //    - Accepts a parameter `value` of type `string | null | undefined`.
@@ -105,6 +107,7 @@ for (let result of getValueLengthResult) {
     console.log(result);
 }
 ;
+console.log('\r');
 // ### **Exercise 4: Enforcing Array Type and Operations**
 // 1. Create a function `addToNumbersArray` that:
 //    - Accepts two parameters:
@@ -131,6 +134,7 @@ for (let result of addToNumbersArrayResult) {
     console.log(result);
 }
 ;
+console.log('\r');
 // ### **Exercise 5: Working with Readonly Arrays**
 // 1. Create a function `duplicateArray` that:
 //    - Accepts a parameter `arr` of type `readonly string[]`.
@@ -143,8 +147,9 @@ for (let result of addToNumbersArrayResult) {
 function duplicateArray(arr) {
     return arr.map(str => `${str}${str}`);
 }
-const duplicateArrayResult = duplicateArray(["foo", "bar"]);
+const duplicateArrayResult = duplicateArray(['foo', 'bar']);
 console.log(duplicateArrayResult);
+console.log('\r');
 // ### **Exercise 6: Type Inference and Mixed Arrays**
 // 1. Create a function `filterMixedArray` that:
 //    - Accepts an array `arr` of inferred type `(string | number)[]`.
@@ -171,9 +176,10 @@ function filterMixedArray(arr) {
     return [stringArr, stringNum];
 }
 ;
-const filterMixedArrayResult = filterMixedArray([1, "apple", 2, "banana", 3]);
+const filterMixedArrayResult = filterMixedArray([1, 'apple', 2, 'banana', 3]);
 const [arr1, arr2] = filterMixedArrayResult;
 console.log(arr1, arr2);
+console.log('\r');
 // ### **Exercise 7: Creating and Manipulating Tuples**
 // 1. Create a function `updateTuple` that:
 //    - Accepts a tuple `data` of type `[number, string, boolean]`.
@@ -201,13 +207,14 @@ function updateTuple(data) {
 }
 ;
 const updateTupleResult = [
-    updateTuple([42, "hello", true]),
-    updateTuple([99, "typescript", false])
+    updateTuple([42, 'hello', true]),
+    updateTuple([99, 'typescript', false])
 ];
 for (let result of updateTupleResult) {
     console.log(result);
 }
 ;
+console.log('\r');
 function calculateDistance(dist1, dist2) {
     const sumOfAll = dist2.map((element, index) => Math.pow(element - dist1[index], 2));
     const reduced = sumOfAll.reduce((acc, curr) => acc + curr, 0);
@@ -221,6 +228,7 @@ const calculateDistanceResult = [
 calculateDistanceResult.forEach(result => {
     console.log(result);
 });
+console.log('\r');
 // ### **Exercise 9: Tuple Validation**
 // 1. Create a function `validateTuple` that:
 //    - Accepts an input `data` of type `any[]`.
@@ -241,14 +249,15 @@ function validateTuple(data) {
 }
 ;
 const validateTupleResult = [
-    validateTuple(["hello", 42, true]),
-    validateTuple([42, "hello", true]),
-    validateTuple(["hello", 42])
+    validateTuple(['hello', 42, true]),
+    validateTuple([42, 'hello', true]),
+    validateTuple(['hello', 42])
 ];
 for (let result of validateTupleResult) {
     console.log(result);
 }
 ;
+console.log('\r');
 ;
 function validateProduct(obj) {
     if (typeof obj.name === 'string' && typeof obj.price === 'number'
@@ -261,9 +270,9 @@ function validateProduct(obj) {
 }
 ;
 const validateProductResult = [
-    validateProduct({ name: "Laptop", price: 1299 }),
-    validateProduct({ name: "Phone", price: "Free" }),
-    validateProduct({ price: 200, category: "Electronics" })
+    validateProduct({ name: 'Laptop', price: 1299 }),
+    validateProduct({ name: 'Phone', price: 'Free' }),
+    validateProduct({ price: 200, category: 'Electronics' })
 ];
 validateProductResult.forEach(result => {
     try {
@@ -273,8 +282,9 @@ validateProductResult.forEach(result => {
         console.log(err.message);
     }
 });
+console.log('\r');
 const scores = { 'Alice': 10, 'Bob': 20 };
-const updates = [{ player: "Alice", score: 5 }, { player: "Charlie", score: 15 }];
+const updates = [{ player: 'Alice', score: 5 }, { player: 'Charlie', score: 15 }];
 function updateScores(scores, updates) {
     for (let obj of updates) {
         if (scores.hasOwnProperty(obj.player)) {
@@ -289,6 +299,7 @@ function updateScores(scores, updates) {
 ;
 const updateScoresResult = updateScores(scores, updates);
 console.log(updateScoresResult);
+console.log('\r');
 ;
 ;
 function getEmployeeNames(obj) {
@@ -296,10 +307,10 @@ function getEmployeeNames(obj) {
 }
 ;
 const department = {
-    name: "Engineering",
+    name: 'Engineering',
     employees: [
-        { id: 1, name: "Alice" },
-        { id: 2, name: "Bob" },
+        { id: 1, name: 'Alice' },
+        { id: 2, name: 'Bob' },
     ],
 };
 const getEmployeeNamesResult = getEmployeeNames(department);

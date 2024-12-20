@@ -14,10 +14,11 @@ function formatUserDetails(userId, userName, isActive) {
     return `User [${userId}]: ${userName} is currently ${isActive ? 'active' : 'not active'}`;
 }
 ;
-const resultOne = formatUserDetails(101, "John Doe", true);
+const resultOne = formatUserDetails(101, 'John Doe', true);
 console.log(resultOne);
-const resultTwo = formatUserDetails(102, "Jane Doe", false);
+const resultTwo = formatUserDetails(102, 'Jane Doe', false);
 console.log(resultTwo);
+console.log('\r');
 // # **Exercise 2: Using BigInt for Large Numbers**
 // Create a function `calculateLargeSum` that:
 // - Accepts two parameters of type `bigint`.
@@ -34,6 +35,7 @@ const n1 = 123456789012345678901234567890n;
 const n2 = 987654321098765432109876543210n;
 const sumResult = calculateLargeSum(n1, n2);
 console.log(sumResult);
+console.log('\r');
 // # **Exercise 3: Working with Symbols**
 // 1. Create two symbols:
 //    - One with a description `"uniqueId"`.
@@ -53,10 +55,11 @@ function compareSymbols(sym1, sym2) {
     }
 }
 ;
-const sym1 = Symbol("uniqueId");
+const sym1 = Symbol('uniqueId');
 const sym2 = Symbol();
 const compareResult = compareSymbols(sym1, sym2);
 console.log(compareResult);
+console.log('\r');
 // # **Exercise 4: Error Handling in Type Assignment**
 // Write a function `logTransaction` that:
 // - Accepts a `transactionId` of type `number | string`.
@@ -87,6 +90,7 @@ logTransaction(1);
 logTransaction('1234');
 logTransaction('5678');
 logTransaction('abc');
+console.log('\r');
 function parseJson(jsonString) {
     const parsed = JSON.parse(jsonString);
     if (typeof parsed.key === 'string' && typeof parsed.value === 'number') {
