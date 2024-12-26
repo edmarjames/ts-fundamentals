@@ -67,7 +67,5 @@ console.log(array[0]);
 console.log(array[3]);
 let myColor = "#0000FF";
 console.log(myColor);
-`]: string };
-
-let obj: DynamicObject = { dynamic_key: "value" };
-console.log(obj);;
+let obj = { dynamic_key: "value" };
+console.log(obj);

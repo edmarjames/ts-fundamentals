@@ -110,7 +110,7 @@ console.log(myColor);
 
 // Index signature labels
 // Allows us to label index signatures using computed property names. It helps in providing more descriptive type information when working with dynamic objects.
-type DynamicObject = { [key: string as `dynamic_${string}`]: string };
+type DynamicObject = { [key: `dynamic_${string}`]: string };
 
 let obj: DynamicObject = { dynamic_key: "value" };
 console.log(obj);
